@@ -1,0 +1,67 @@
+{
+  "person": {
+    "givenName": "James",
+    "familyName": "McGregor"
+  },
+  "personCompetency": [
+    {
+      "competencyID": "IPS",
+      "competencyName": "Interpersonal skills"
+    },
+    {
+      "competencyID": "CAR",
+      "competencyName": "Consistency and Reliability",
+      "competencyLevel": "High"
+    }
+  ],
+  "workEligibility": [
+    {
+      "countryCode": {
+        "name": "United Kingdom",
+        "code": "UK"
+      },
+      "permanent": true
+    }
+  ],
+  "positionHistory": [
+    {
+      "employer": "Credit Suisse",
+      "positionTitle": "Business Analyst",
+      "startDate": "1980-02-01"
+    }
+  ],
+  "certification": [
+    {
+      "certificationTypeCode": {
+        "name": "Oracle Java Certification Associate",
+        "code": "OJCA"
+      },
+      "certificationName": "Oracle Java Certification Associate"
+    }
+  ],
+  "license": [
+    {
+      "licenseTypeCode": {
+        "name": "Driver's Licence Code",
+        "code": "DLIC"
+      },
+      "licenseName": "Driver's Licence"
+    }
+  ],
+  "employmentReferences": [
+    {
+      "formattedName": "David Smith"
+    }
+  ],
+  "specialCommitment": [
+    {
+      "name": "Chair person for non-profit organisation",
+      "code": "CHAR"
+    }
+  ],
+  "attachment": [
+    {
+      "fileName": "CoverLetter.doc"
+    }
+  ]
+}

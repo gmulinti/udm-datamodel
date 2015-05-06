@@ -1,0 +1,23 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://openplatform.lumesse.com/schemas/isoc08",
+	"title": "Job Code",
+	"description": "An ISCO08 Job Code.  Details of this standard can be found at https://ec.europa.eu/esco/home",
+	"type": "object",
+	"javaType": "com.openplatform.udm.common.JobCode",
+	"javaInterfaces": ["java.io.Serializable"],
+	"required": ["code"],
+	"properties": {
+		"name": {
+			"description": "The textual name of the code. NB Display only and is derived from 'Code' value.",
+			"type": "string"
+		},
+		"code": {
+			"description": "The short code to represent the code name.",
+			"type": "string",
+			"pattern": "^http://ec.europa.eu/esco/occupation/"
+		}
+	},
+	"additionalProperties": false
+	
+}

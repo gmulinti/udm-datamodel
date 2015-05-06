@@ -1,0 +1,264 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://openplatform.lumesse.com/schemas/positionopening",
+	"title": "job / position opening detail",
+	"description": "Schema for use case UC003* - details of job / position opening",
+	"type": "object",
+	"javaType": "com.openplatform.udm.position.PositionOpening",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"positionID": {
+			"description": "identifier of position",
+			"type": "array",
+			"items": {
+				"$ref": "id.json"
+			}
+		},
+		"positionTitle": {
+			"description": "title of position",
+			"type": "string"
+		},
+		"positionURI": {
+			"description": "URI of position - for detailed view",
+			"type": "string"
+		},
+		"applyURI": {
+			"description": "URI for online application (form)",
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"applicationMethod": {
+			"description": "further methods of application",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"target": {
+						"description": "Target",
+						"type": "string"
+					},
+					"label": {
+						"description": "Label",
+						"type": "string"
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"positionOpeningStatusCode": {
+			"description": "Status of position opening; typical values: 'Active', 'Closed', 'Incomplete'",
+			"type": "string"
+		},
+		"positionSupplier": {
+			"description": "Supplier of position - e.g. company, job board",
+			"type": "string"
+		},
+		"positionLocation": {
+			"description": "Physical location of the position",
+			"type": "array",
+			"items": {
+				"$ref": "address.json"
+			}
+		},
+		"organizationName": {
+			"description": "Organization Name",
+			"type": "string"
+		},
+		"parentOrganizationName": {
+			"description": "Parent Organization Name",
+			"type": "string"
+		},
+		"departmentName": {
+			"description": "Department Name",
+			"type": "string"
+		},
+		"positionIndustry": {
+			"description": "Industry of the position - name/code - relates to field HR-XML 3.2 : PositionOpening",
+			"type": "array",
+			"items": {
+				"$ref": "industrycode.json"
+			}
+		},
+		"jobCategory": {
+			"description": "Job category of the position - name/code",
+			"type": "array",
+			"items": {
+				"$ref": "jobcode.json"
+			}
+		},
+		"jobGrade": {
+			"description": "Job grade of the position - name/code",
+			"type": "array",
+			"items": {
+				"$ref": "code.json"
+			}
+		},
+		"careerLevel": {
+			"description": "Career level of the position - name/code",
+			"type": "array",
+			"items": {
+				"$ref": "code.json"
+			}
+		},
+		"positionSchedule": {
+			"description": "Schedule of the position - name/code",
+			"type": "array",
+			"items": {
+				"$ref": "code.json"
+			}
+		},
+		"positionOfferingType": {
+			"description": "Offering type of the position - name/code",
+			"type": "array",
+			"items": {
+				"$ref": "code.json"
+			}
+		},
+		"qualificationSummary": {
+			"description": "Summary of qualifications relevant for the position. Could include competencies, certificates and licenses",
+			"type": "string"
+		},
+		"positionRemuneration": {
+			"description": "Information on remuneration of the position, Contains a minimum/maximum range for a given interval as well as a general description field.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"minimumRange": {
+						"description": "Minimum Range",
+						"type": "string"
+					},
+					"maximumRange": {
+						"description": "Maximum Range",
+						"type": "string"
+					},
+					"rateIntervalCode": {
+						"description": "Rate Interval Code",
+						"type": "string"
+					},
+					"description": {	
+						"description": "Description",
+						"type": "string"
+					},
+					"userArea": {
+						"description": "The userarea section contains the additional field mapping",
+						"type": "array",
+						"items": {
+							"$ref": "userarea.json"
+						}
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"workingLanguage": {
+			"description": "Information on the position working language - name/code",
+			"type": "array",
+			"items": {
+				"$ref": "languagecode.json"
+			}
+		},
+		"positionStartDate": {
+			"description": "Start date of the position",
+			"type": "string"
+		},
+		"positionEndDate": {
+			"description": "End date of the position - if limited / not permanent",
+			"type": "string"
+		},
+		"publicationStartDate": {
+			"description": "Start date of publication - in current channel",
+			"type": "string"
+		},
+		"applicationCloseDate": {
+			"description": "Close date of the application period",
+			"type": "string"
+		},
+		"positionFormattedDescription": {
+			"description": "Formatted description texts for the position",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"content": {
+						"description": "Actual description text",
+						"type": "string"
+					},
+					"label": {
+						"description": "Label to describe type of description text - in order to identify relevant parts",
+						"type": "string",
+						"enum": ["SummaryDescription", "FullDescription", "Snippet", "Keywords", "Other"]
+					},
+					"labelDescription": {
+						"description": "Additional label description to specify usage in detail.",
+						"type": "string"
+					},
+					"userArea": {
+						"description": "The userarea section contains the additional field mapping",
+						"type": "array",
+						"items": {
+							"$ref": "userarea.json"
+						}
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"postingInstruction": {
+			"description": "",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"templateID": {
+						"description": "",
+						"type": "string"
+					},
+					"brandingID": {
+						"description": "",
+						"type": "string"
+					},
+					"logoURI": {
+						"description": "",
+						"type": "string"
+					},
+					"userArea": {
+						"description": "The userarea section contains the additional field mapping",
+						"type": "array",
+						"items": {
+							"$ref": "userarea.json"
+						}
+					}
+				}
+			}
+		},
+		"specialCommitment": {
+			"description": "Additional information on special commitments - name/code",
+			"type": "array",
+			"items": {
+				"$ref": "code.json"
+			}
+		},
+		"attachment": {
+			"description": "Attachment",
+			"type": "array",
+			"items": {
+				"$ref": "attachment.json"				
+			}
+		},
+		"userArea": {
+			"description": "The userarea section contains the additional field mapping",
+			"type": "array",
+			"items": {
+				"$ref": "userarea.json"
+			}
+		}
+	},
+	"additionalProperties": false
+}

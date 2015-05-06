@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<artifactId>json-model</artifactId>
+	<name>json-model</name>
+	<description>This project holds the JSON schemas for the openplatform.</description>
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.openplatform.udm</groupId>
+		<artifactId>udm-datamodel</artifactId>
+		<version>4.0-SNAPSHOT</version>
+	</parent>
+	
+	<properties>
+		<jetty.maven.plugin.version>9.2.3.v20140905</jetty.maven.plugin.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.github.fge</groupId>
+			<artifactId>json-schema-validator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.maven.plugin.version}</version>
+				<configuration>
+					<webAppSourceDirectory>${basedir}/src/main/resources</webAppSourceDirectory>
+					<webApp>
+						<descriptor>${basedir}/src/main/resources/web.xml</descriptor>
+					</webApp>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<configuration>
+					<includes>
+						<include>com/openplatform/udm/jsonmodel/**</include>
+					</includes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	</project>

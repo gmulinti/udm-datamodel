@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://openplatform.lumesse.com/schemas/organization#",
+  "title": "organization",
+  "description": "The Organization Structure",
+  "type": "object",
+  "javaType": "com.openplatform.udm.organization.OrganizationChart",
+  "javaInterfaces": [ "java.io.Serializable" ],
+  "definitions": {
+    "organizationUnitCode": {
+      "description": "The organization unit code ",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "organizationUnit": {
+      "description": "The organization Unit ",
+      "type": "object",
+      "javaInterfaces": [ "java.io.Serializable" ],
+      "required": [ "organizationUnitCode" ],
+      "properties": {
+        "organizationUnitCode": {
+          "$ref": "organization.json#/definitions/organizationUnitCode"
+        },
+        "organizationUnitName": {
+          "description": "The organization unit Name ",
+          "type": "string"
+        },
+        "organizationUnitDescription": {
+          "description": "The organization unit description ",
+          "type": "string"
+        },
+        "parentOrganizationUnit": {
+          "description": "The parent organization Unit ",
+          "type": "object",
+          "javaInterfaces": [ "java.io.Serializable" ],
+          "properties": {
+            "organizationUnitCode": {
+              "$ref": "organization.json#/definitions/organizationUnitCode"
+            },
+            "userArea": {
+              "description": "The userarea section contains the additional field mapping",
+              "type": "array",
+              "items": {
+                "$ref": "userarea.json"
+              }
+            }
+          }
+        },
+        "userArea": {
+          "description": "The userarea section contains the additional field mapping",
+          "type": "array",
+          "items": {
+            "$ref": "userarea.json"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

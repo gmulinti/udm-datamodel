@@ -1,0 +1,17 @@
+{
+  "id": "478",
+  "givenName": "Neil",
+  "familyName": "Redway",
+  "primaryLanguage": {
+    "name": "English",
+    "code": "en"
+  },
+  "address": [
+    {
+      "countryCode": {
+        "name": "New Zealand",
+        "code": "NZ"
+      }
+    }
+  ]
+}

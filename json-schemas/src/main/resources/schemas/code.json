@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://openplatform.lumesse.com/schemas/code",
+	"title": "code",
+	"description": "A reusable element that conveys a code description of an entity",
+	"type": "object",
+	"javaType": "com.openplatform.udm.common.Code",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"name": {
+			"description": "The textual name of the code",
+			"type": "string"
+		},
+		"code": {
+			"description": "The acronym to represent the code name",
+			"type": "string"
+		},
+		"codeURI": {
+			"description": "The URI that designates list of available codes",
+			"type": "string",
+			"pattern": "^(https?|ftp)://.*$"
+		},
+		"codeType": {
+			"description": "The type/scheme that the code or name refers to",
+			"type": "string",
+			"pattern": "^(https?|ftp)://.*$"
+		}
+	},
+	"additionalProperties": false
+}

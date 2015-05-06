@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://openplatform.lumesse.com/schemas/userarea",
+	"title": "userarea",
+	"description": "Additional fields/data area",
+	"javaType": "com.openplatform.udm.common.UserArea",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"key": {
+			"description": "The key to identify the code e.g. ShoeSize",
+			"type": "string"
+		},
+		"value": {
+			"description": "The value of the code e.g. Size 6",
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}

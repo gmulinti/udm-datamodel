@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://openplatform.lumesse.com/schemas/referencelocation",
+	"title": "Reference Location",
+	"description": "Defines the country, region and city as a reference address",
+	"type": "object",
+	"javaType": "com.openplatform.udm.common.ReferenceLocation",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"countryCode": {
+			"description": "Country Code",
+			"$ref": "countrycode.json"
+		},
+		"countrySubDivisionCode": {
+			"description": "Country Sub Division Code",
+			"type": "array",
+			"items": {
+				"$ref": "regioncode.json"
+			}
+		},
+		"cityName": {
+			"description": "The city in which the entity resides e.g. Auckland",
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}

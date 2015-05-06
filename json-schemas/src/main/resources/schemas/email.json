@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://openplatform.lumesse.com/schemas/email",
+	"title": "email",
+	"description": "Schema defining the email address of an entity. It is expected that this is referenced by Candidate, Employee and many other entities",
+	"type": "object",
+	"javaType": "com.openplatform.udm.common.Email",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"address": {
+			"description": "Actual email address",
+			"type": "string",
+			"format": "email"
+		},
+		"label": {
+			"description": "Label specifying type of use of this email address",
+			"type": "string",
+			"enum": ["Personal", "Work", "Mobile", "Other"]
+		},
+		"preferred": {
+			"description": "Information on preference of this email address",
+			"type": "string",
+			"enum": ["Primary", "Secondary"]
+		}
+	},
+	"additionalProperties": false
+}

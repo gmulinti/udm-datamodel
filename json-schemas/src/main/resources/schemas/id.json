@@ -1,0 +1,20 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://openplatform.lumesse.com/schemas/id",
+	"title": "id",
+	"description": "A reusable element that conveys an ID of an entity",
+	"type": "object",
+	"javaType": "com.openplatform.udm.common.Id",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"id": {
+			"description": "The textual name of the code",
+			"type": "string"
+		},
+		"scheme": {
+			"description": "The system/scheme that this ID represents ",
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}

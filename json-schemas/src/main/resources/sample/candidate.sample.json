@@ -1,0 +1,458 @@
+{
+  "person": {
+    "givenName": "James",
+    "familyName": "McGregor-Smith-Brown",
+    "formattedName": "James McGregor-Smith-Brown",
+    "dateOfBirth": "1854-7-31",
+    "gender": "Male",
+    "address": [
+      {
+        "countryCode": {
+          "name": "New Zealand",
+          "code": "NZ"
+        },
+        "countrySubDivisionCode": {
+          "name": "New Zealand - Auckland",
+          "code": "NZ-AUK"
+        },
+        "cityName": "Auckland",
+        "postalCode": "1001",
+        "addressLine": "25 Glengary Road",
+        "label": "home address"
+      },
+      {
+        "countryCode": {
+          "name": "Switzerland",
+          "code": "CH"
+        },
+        "countrySubDivisionCode": {
+          "name": "Switzerland - BLA",
+          "code": "CH-BLA"
+        },
+        "cityName": "",
+        "postalCode": "TH567DG",
+        "addressLine": "9 Alberta",
+        "label": "parents address"
+      },
+      {
+        "countryCode": {
+          "name": "United Kingdom",
+          "code": "UK"
+        },
+        "countrySubDivisionCode": {
+          "name": "United Kingdom - BUC",
+          "code": "UK-BUC"
+        },
+        "cityName": "High Wycombe",
+        "postalCode": "SL73TU",
+        "addressLine": "The Street, The Area",
+        "label": "Country home"
+      }
+    ],
+    "phone": [
+      {
+        "number": "0779 988 222",
+        "label": "Mobile",
+        "preferred": "Primary"
+      },
+      {
+        "number": "07856201564",
+        "label": "Mobile",
+        "preferred": "Secondary"
+      }
+    ],
+    "email": [
+      {
+        "address": "james@lumesse.com",
+        "label": "Work",
+        "preferred": "Primary"
+      },
+      {
+        "address": "james.mcgregor.smith.brown@hotmail.com",
+        "label": "Personal",
+        "preferred": "Secondary"
+      }
+    ],
+    "web": [
+      {
+        "address": "https://www.facebook.com/jamesmcgsb",
+        "label": "Social",
+        "labelDescription": "Social networking profile URL"
+      },
+      {
+        "address": "https://www.jamesmcgregorsb.com",
+        "label": "Personal",
+        "labelDescription": "Personal website. Blog etc."
+      }
+    ],
+    "userArea": [
+      {
+        "key": "middleName",
+        "value": "bob"
+      }
+    ]
+  },
+  "personCompetency": [
+    {
+      "competencyID": "IPS",
+      "competencyName": "Interpersonal skills",
+      "competencyLevel": "High"
+    },
+    {
+      "competencyID": "CAR",
+      "competencyName": "Consistency and Reliability",
+      "competencyLevel": "Medium"
+    },
+    {
+      "competencyID": "BDM",
+      "competencyName": "Balanced Decision Making",
+      "competencyLevel": "High"
+    }
+  ],
+  "workEligibility": [
+    {
+      "countryCode": {
+        "name": "United Kingdom",
+        "code": "UK"
+      },
+      "permanent": true
+    },
+    {
+      "countryCode": {
+        "name": "United States",
+        "code": "US"
+      },
+      "permanent": false
+    }
+  ],
+  "educationOrganizationAttendance": [
+    {
+      "school": "Borlase",
+      "subSchool": [
+        "Secondary",
+        "Sixth form"
+      ],
+      "referenceLocation": {
+        "countryCode": {
+          "name": "United Kingdom",
+          "code": "UK"
+        },
+        "countrySubDivisionCode": [
+          {
+            "name": "United Kingdom - BUC",
+            "code": "UK-BUC"
+          },
+          {
+            "name": "United Kingdom - BER",
+            "code": "UK-BER"
+          }
+        ],
+        "cityName": "Marlow"
+      },
+      "educationLevel": [
+        {
+          "name": "GCSE",
+          "code": "GCSE",
+          "codeURI": "http://isocodes/qualifcationtype",
+          "codeType": "http://isocodes/qualifcationtype/#code-a1"
+        },
+        {
+          "name": "A-Level",
+          "code": "A-Level",
+          "codeURI": "http://isocodes/qualifcationtype",
+          "codeType": "http://isocodes/qualifcationtype/#code-a1"
+        }
+      ],
+      "attendanceStatusCode": "Prior",
+      "attendanceStartDate": "1974-01-01",
+      "attendanceEndDate": "1982-01-01",
+      "educationScore": [
+        "A",
+        "A",
+        "A",
+        "B",
+        "B"
+      ],
+      "degreeType": [
+        {
+          "name": "Shouldn't exist for school"
+        },
+        {
+          "code": "Shouldn't exist for school"
+        }
+      ],
+      "degreeDate": "1980-05-01",
+      "majorProgramName": [
+        "NULL",
+        "NULL"
+      ],
+      "minorProgramName": [
+        "NULL",
+        "NULL"
+      ],
+      "academicHonors": "NULL",
+      "comment": "TEST",
+      "userArea": [
+        {
+          "key": "middleName",
+          "value": "bob"
+        }
+      ]
+    },
+    {
+      "school": "University of Nottingham",
+      "subSchool": [
+        "School of Computer Science",
+        "School of Mathematics"
+      ],
+      "referenceLocation": {
+        "countryCode": {
+          "name": "United Kingdom",
+          "code": "UK"
+        },
+        "countrySubDivisionCode": [
+          {
+            "name": "United Kingdom - Nottingham",
+            "code": "UK-NOT"
+          },
+          {
+            "name": "United Kingdom - Middlesex",
+            "code": "UK-MID"
+          }
+        ]
+      },
+      "educationLevel": [
+        {
+          "name": "Bachelor of Science",
+          "code": "BSc",
+          "codeURI": "http://isocodes/qualifcationtype",
+          "codeType": "http://isocodes/qualifcationtype/#code-a1"
+        },
+        {
+          "name": "Doctor of Philosophy",
+          "code": "PhD",
+          "codeURI": "http://isocodes/qualifcationtype",
+          "codeType": "http://isocodes/qualifcationtype/#code-a1"
+        }
+      ],
+      "attendanceStatusCode": "Prior",
+      "attendanceStartDate": "1982-01-01",
+      "attendanceEndDate": "1988-01-01",
+      "educationScore": [
+        "First class",
+        "Distinction"
+      ],
+      "degreeType": [
+        {
+          "name": "Computer Science",
+          "code": "A101"
+        }
+      ],
+      "degreeDate": "1985-05-01",
+      "majorProgramName": [
+        "Computer Science",
+        "Some other"
+      ],
+      "minorProgramName": [
+        "None",
+        "None"
+      ],
+      "academicHonors": "Hons",
+      "comment": "This covers both BSc and PhD qualifications as both were undertaken at the same institution",
+      "userArea": [
+        {
+          "key": "middleName",
+          "value": "bob"
+        }
+      ]
+    }
+  ],
+  "positionHistory": [
+    {
+      "employer": "Credit Suisse",
+      "organizationUnitName": "Technology",
+      "positionTitle": "Business Analyst",
+      "referenceLocation": {
+        "countryCode": {
+          "name": "United Kingdom",
+          "code": "UK"
+        },
+        "countrySubDivisionCode": [
+          {
+            "name": "United Kingdom - London",
+            "code": "UK-LDN"
+          },
+          {
+            "name": "United Kingdom - CLN",
+            "code": "UK-CLN"
+          }
+        ],
+        "cityName": "London"
+      },
+      "startDate": "1980-02",
+      "endDate": "1991-09",
+      "currentIndicator": false,
+      "industry": [
+        {
+          "name": "Other information technology and computer service activities",
+          "code": "6209"
+        },
+        {
+          "name": "Central banking",
+          "code": "6411"
+        }
+      ],
+      "jobCategory": [
+        {
+          "name": "Physicists and astronomers",
+          "code": "http://ec.europa.eu/esco/occupation/285"
+        },
+        {
+          "name": "Information and communications technology service managers",
+          "code": "http://ec.europa.eu/esco/occupation/500"
+        }
+      ],
+      "jobLevel": [
+        {
+          "name": "Intern",
+          "code": "INT"
+        },
+        {
+          "name": "Associate",
+          "code": "ASS"
+        },
+        {
+          "name": "Vice President",
+          "code": "VP"
+        }
+      ],
+      "description": "Initial career path from University",
+      "userArea": [
+        {
+          "key": "middleName",
+          "value": "bob"
+        }
+      ]
+    }
+  ],
+  "certification": [
+    {
+      "certificationTypeCode": {
+        "name": "Oracle Java Certification Associate",
+        "code": "OJCA",
+        "codeURI": "http://isocodes/recognisedcertification",
+        "codeType": "http://isocodes/recognisedcertification/#code-a1"
+      }
+    },
+    {
+      "certificationName": "Oracle Java Certification Associate"
+    },
+    {
+      "description": "The first part of the official Java Programmer Certification Programme from Oracle"
+    },
+    {
+      "issuingAuthorityName": "Oracle"
+    },
+    {
+      "firstIssuedDate": "1992-05"
+    },
+    {
+      "endDate": "1992-10"
+    }
+  ],
+  "license": [
+    {
+      "licenseTypeCode": {
+        "name": "Driver's Licence Code",
+        "code": "DLIC",
+        "codeURI": "http://isocodes/recoginsedlicences",
+        "codeType": "http://isocodes/recoginsedlicences/#code-a1"
+      },
+      "licenseName": "Driver's Licence",
+      "description": "A Licence that permits the candidate to drive in the country it was issued",
+      "issuingAuthorityName": "DVLA",
+      "firstIssuedDate": "1980-02",
+      "endDate": "NULL"
+    },
+    {
+      "licenseTypeCode": {
+        "name": "Forklift Driver's Code",
+        "code": "FLDC",
+        "codeURI": "http://isocodes/recoginsedlicences",
+        "codeType": "http://isocodes/recoginsedlicences/#code-a1"
+      },
+      "licenseName": "Forklift Driver's Certification",
+      "description": "A Licence that permits the candidate to drive a forklift truck in the country it was issued",
+      "issuingAuthorityName": "FLLA",
+      "firstIssuedDate": "1990-02",
+      "endDate": "2004-02"
+    }
+  ],
+  "employmentReferences": [
+    {
+      "refereeTypeCode": "Professional",
+      "formattedName": "David Lloyd",
+      "positionTitle": "Line manager",
+      "organizationName": "Credit Suisse",
+      "preferredPhone": "01628456738",
+      "preferredEmail": "davidlloyd@creditsuissefinance.com",
+      "yearsKnownNumber": 7.0,
+      "relationshipTypeCode": [
+        {
+          "name": "Mentor",
+          "code": "MNR",
+          "codeURI": "http://isocodes/relationshiptype",
+          "codeType": "http://isocodes/relationshiptype/#code-a1"
+        },
+        {
+          "name": "Manager",
+          "code": "MGR",
+          "codeURI": "http://isocodes/relationshiptype",
+          "codeType": "http://isocodes/relationshiptype/#code-a1"
+        }
+      ],
+      "comment": "Long standing employee of the company and direct manager of the candidate"
+    }
+  ],
+  "specialCommitment": [
+    {
+      "name": "Carer for mother",
+      "code": "CARE"
+    },
+    {
+      "name": "Chair person for non-profit organisation",
+      "code": "CHAR"
+    }
+  ],
+  "attachment": [
+    {
+      "embeddedData": "SSB3cml0ZSB0aGlzIGNvdmVyIGxldHRlciBpbiBjb25qdW5jdGlvbiB3aXRoIG15IENWIHRvIGFkZCBmdXJ0aGVyIGRldGFpbHMgYWJvdXQgbXkgY2FyZWVyIHRvIGRhdGUgYW5kIEkgd2h5IEkgdGhpbmsgSSB3b3VsZCBiZSBhIGdvb2QgZml0IGZvciB0aGUgcm9sZSB5b3UgYXJlIGFkdmVydGlzaW5nLiBUaGUgdmFzdCBtYWpvcml0eSBvZiBteSBjYXJlZXIgaGFzIGZvY3VzZWQgb24uLi4=",
+      "embeddedText": "I write this cover letter in conjunction with my CV to add further details about my career to date and I why I think I would be a good fit for the role you are advertising. The vast majority of my career has focused on...",
+      "uri": "http://candidateattachments/repository/candidate3245/CoverLetter.doc",
+      "fileName": "CoverLetter.doc",
+      "description": "Cover letter",
+      "fileType": "Doc",
+      "documentTitle": "Cover letter for software developer role at Lumesse",
+      "accessCredentials": [
+        {
+          "userID": "65372",
+          "typeCode": [
+            {
+              "name": "Username & password",
+              "code": "UAP",
+              "codeURI": "http://isocodes/accesscredtype",
+              "codeType": "http://isocodes/accesscredtype/#code-a1"
+            }
+          ],
+          "value": "username: Username, password: LumessePass1"
+        }
+      ],
+      "userArea": [
+        {
+          "key": "middleName",
+          "value": "bob"
+        }
+      ]
+    }
+  ]
+}

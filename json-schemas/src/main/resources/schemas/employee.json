@@ -1,0 +1,267 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://openplatform.lumesse.com/schemas/employee",
+	"title": "employee schema",
+	"description": "An employee representation.  This represents a complete employee record of an HRIS system.",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"organisationName": {
+			"description": "The name of the organisation that this employee record originates from",
+			"type": "string"
+		},
+		"organisationID": {
+			"description": "The identifier of the organisation that this employee record originates from",
+			"type": "string"
+		},
+		"person": {
+			"description": "The person details of this employee",
+			"$ref": "person.json"
+		},
+		"employeeID": {
+			"description": "The employee identifier.  There may be multiple schemes that are in use.",
+			"type": "array",
+			"items": {
+				"$ref": "id.json"
+			}
+		},
+		"employeeGroupCode": {
+			"description": "Allows further classification of the employee using employer or program specific codes/vocabularies",
+			"$ref": "code.json"
+		},
+		"employmentTermCode": {
+			"description": "Classifies whether a employment is 'regular' ( i.e. without a scheduled or known end date) or temporary ( employment with a known or scheduled to end)",
+			"type": "string",
+			"enum": ["Regular", "Temporary"]
+		},
+		"employeedIndicator": {
+			"description": "Indicates whether or not the associated person is currently employeed",
+			"type": "boolean"
+		},
+		"proposedHire": {
+			"description": "The scheduled or anticipated date on which the employee will 'enter on duty' DateFormat:  YYYY-MM-DD or YYYY-MM or YYYY",
+			"type": "string",
+			"pattern": "^[0-9]{4}(-[0-9]{2}){0,2}$"
+		},
+		"employmentLifecycle": {
+			"description": "Details period of employment with an employer",
+			"type": "object",
+			"javaInterfaces": ["java.io.Serializable"],
+			"properties": {
+				"hireDate": {
+					"description": "The date the employment started. DateFormat:  YYYY-MM-DD or YYYY-MM or YYYY",
+					"type": "string",
+					"pattern": "^[0-9]{4}(-[0-9]{2}){0,2}$"
+				},
+				"leaveDate": {
+					"description": "The date the employment period terminated. DateFormat:  YYYY-MM-DD or YYYY-MM or YYYY",
+					"type": "string",
+					"pattern": "^[0-9]{4}(-[0-9]{2}){0,2}$"
+				},
+				"leaveReason": {
+					"description": "The reason for the employment to be terminated",
+					"type": "string"
+				},
+				"scheduledReturnDate": {
+					"description": "The expected date for the employee to return. DateFormat:  YYYY-MM-DD or YYYY-MM or YYYY",
+					"type": "string",
+					"pattern": "^[0-9]{4}(-[0-9]{2}){0,2}$"
+				}
+			}
+		},
+		"deployment": {
+			"description": "The location in which the employee undertakes work",
+			"type": "object",
+			"javaInterfaces": ["java.io.Serializable"],
+			"properties": {
+				"organisation": {
+					"description": "The name of the organisation currently deployed",
+					"type": "string"
+				},
+				"workLocation": {
+					"type": "object",
+					"javaInterfaces": ["java.io.Serializable"],
+					"properties": {
+						"locationName": {
+							"description": "The reference name of this location",
+							"type": "string"
+						},
+						"address": {
+							"description": "address",
+							"$ref": "address.json"
+						}
+					}
+				},
+				"job": {
+					"description": "A Job is an occupation exercised for compensation",
+					"type": "object",
+					"javaInterfaces": ["java.io.Serializable"],
+					"properties": {
+						"jobID": {
+							"description": "The unique identifier of the Job",
+							"type": "string"
+						},
+						"jobCode": {
+							"description": "A code classifying the type of category of the job",
+							"$ref": "code.json"
+						},
+						"jobTitle": {
+							"description": "The position or designation of the person within the organisation",
+							"type": "string"
+						},
+						"jobDescription": {
+							"description": "Descriptive text on the responsibilities of the occupation",
+							"type": "string"
+						}
+					}
+				},
+				"position": {
+					"description": "A position which is a deployment of a person to perform a job for an organisation.",
+					"type": "object",
+					"javaInterfaces": ["java.io.Serializable"],
+					"properties": {
+						"positionID": {
+							"description": "The unique identifier of the position",
+							"type": "string"
+						},
+						"positionTitle": {
+							"description": "A short phrase describing the position as it would be listed on a business card",
+							"type": "string"
+						}
+					}
+				},
+				"schedule": {
+					"description": "The amount of time the employee is contracted to work",
+					"type": "object",
+					"javaInterfaces": ["java.io.Serializable"],
+					"properties": {
+						"amount": {
+							"description": "The amount of [frequency] per [basis]",
+							"type": "number"
+						},
+						"basis": {
+							"description": "Provides the basis or period for expressing the frequency & amount. e.g. 40 hrs per week  - week is the basic",
+							"type": "string",
+							"enum": ["Day", "Week", "Two Weeks", "Four Weeks", "Half Month", "Month", "Two Months", "Quarter", "Seasonal Term", "Half Year", "Year"]
+						},
+						"frequency": {
+							"description": "The frequency of the amount e.g. 40 hrs per week  - hrs is the frequency",
+							"type": "string",
+							"enum": ["Day", "Week", "Two Weeks", "Four Weeks", "Half Month", "Month", "Two Months", "Quarter", "Seasonal Term", "Half Year", "Year"]
+						}
+					}
+				},
+				"fulltimeEquivalentRatio": {
+					"description": "A ratio ( decimal value ) expressing the level of the position as a full-time equivalent employee. Often represented a FTE",
+					"type": "number"
+				},
+				"payCycleRemuneration": {
+					"description": "Describes the monetary compensation for work",
+					"type": "object",
+					"javaInterfaces": ["java.io.Serializable"],
+					"properties": {
+						"remuneration": {
+							"description": "Describes the monetary compensation for work",
+							"type": "array",
+							"items": {
+								"type": "object",
+								"javaInterfaces": ["java.io.Serializable"],
+								"properties": {
+									"currencyCode": {
+										"description": "ISO 4217 Currency Code",
+										"type": "string",
+										"pattern": "^[A-Z]{3}$"
+									},
+									"amount": {
+										"description": "The amount of money involved in the transaction",
+										"type": "number"
+									},
+									"remunerationRateIntervalCode": {
+										"description": "An interval of time or other basis used to express a rate of pay or remuneration",
+										"type": "string",
+										"enum": ["Hour", "Day", "Week", "TwoWeeks", "FourWeeks", "HalfMonth", "Month", "TwoMonths", "Quarter", "SeasonalTerm", "HalfYear", "Year", "QuarterTo Date", "YearToDate", "Once"]
+									},
+									"remunerationTypeCode": {
+										"description": "value that classify the type of pay or remuneration",
+										"type": "string",
+										"enum": ["BasePay", "Commission", "Bonus", "ShortTermIncentive", "ShiftPremium"]
+									}
+								},
+								"additionalProperties": false
+							}
+						},
+						"payCycleIntervalCode": {
+							"description": "Specifies how often the pay cycle occurs or, in other words, how often a person is paid",
+							"type": "string",
+							"enum": ["Day", "Week", "TwoWeeks", "HalfMonth", "Month", "TwoMonths", "MonthWeek", "MonthWeek2", "MonthWeek3", "MonthWeek4", "MonthWeek5", "MonthWeekLast", "Quarter", "HalfYear", "Year"]
+						},
+						"userArea": {
+							"description": "The userarea section contains the additional field mapping",
+							"type": "array",
+							"items": {
+								"$ref": "userarea.json"
+							}
+						}
+					}
+				},
+				"directDepositInstruction": {
+					"description": "Payment instructions for the remuneration",
+					"type": "object",
+					"javaInterfaces": ["java.io.Serializable"],
+					"properties": {
+						"account": {
+							"description": "The bank account number",
+							"type": "string"
+						},
+						"bankCode": {
+							"description": "The bank branch identifier",
+							"$ref": "code.json"
+						},
+						"bankBranch": {
+							"description": "The branch of the bank",
+							"type": "object",
+							"javaInterfaces": ["java.io.Serializable"],
+							"properties": {
+								"name:": {
+									"description": "The name of the Bank",
+									"type": "string"
+								},
+								"address": {
+									"description": "The address of the Bank",
+									"$ref": "address.json"
+								}
+							}
+						}
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+		"dependents": {
+			"description": "Describes the monetary compensation for work",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"relationship": {
+						"description": "the relationship of the person to the employee",
+						"type": "string"
+					},
+					"person": {
+						"description": "the details of the dependent",
+						"$ref": "person.json"
+					}
+				}
+			}
+		},
+		"userArea": {
+			"description": "The userarea section contains the additional field mapping",
+			"type": "array",
+			"items": {
+				"$ref": "userarea.json"
+			}
+		}
+	},
+	"additionalProperties": false
+}

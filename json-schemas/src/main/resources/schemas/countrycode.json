@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://openplatform.lumesse.com/schemas/ISO-3166-1",
+	"title": "Country Code",
+	"description": "An ISO-3166-1 Country Code",
+	"type": "object",
+	"javaType": "com.openplatform.udm.common.CountryCode",
+	"javaInterfaces": ["java.io.Serializable"],
+	"required": ["code"],
+	"properties": {
+		"name": {
+			"description": "The textual name of the code. NB Display only and is derived from 'Code' value.",
+			"type": "string"
+		},
+		"code": {
+			"description": "The short code to represent the code name.",
+			"type": "string",
+			"pattern": "^[A-Z]{2}$"
+		}
+	},
+	"additionalProperties": false	
+}

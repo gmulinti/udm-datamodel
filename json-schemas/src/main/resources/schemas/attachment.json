@@ -1,0 +1,54 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://openplatform.lumesse.com/schemas/attachment",
+	"title": "attachment",
+	"description": "Attached data",
+	"javaType": "com.openplatform.udm.common.Attachment",
+	"javaInterfaces": ["java.io.Serializable"],
+	"type": "object",
+	"properties": {
+		"embeddedData": {
+			"description": "Embedded Data",
+			"type": "string"
+		},
+		"embeddedText": {
+			"description": "Embedded Text",
+			"type": "string"
+		},
+		"uri": {
+			"description": "URI",
+			"type": "string"
+		},
+		"fileName": {
+			"description": "filename",
+			"type": "string"
+		},
+		"description": {
+			"description": "description",
+			"type": "string"
+		},
+		"fileType": {
+			"description": "FileType",
+			"type": "string"
+		},
+		"documentTitle": {
+			"description": "Document Title",
+			"type": "string"
+		},
+		"accessCredentials": {
+			"description": "Credentials required to access the attachment",
+			"type": "array",
+			"items": {
+				"$ref": "accesscredential.json"
+			}
+		},
+		"userArea": {
+			"description": "The userarea section contains the additional field mapping",
+			"type": "array",
+			"items": {
+				"$ref": "userarea.json"
+			}
+		}
+	},
+	"additionalProperties": false
+}

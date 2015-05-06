@@ -1,0 +1,115 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://openplatform.lumesse.com/schemas/person",
+	"title": "person schema",
+	"description": "Schema defining the base person object. It shouldn't be used outside of a specific persona - e.g. Candidate, Employee etc",
+	"type": "object",
+	"javaType": "com.openplatform.udm.common.Person",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"id": {
+			"description": "Unique identifier for this person",
+			"type": "string"
+		},
+		"givenName": {
+			"description": "Otherwise known as firstname",
+			"type": "string"
+		},
+		"familyName": {
+			"description": "Otherwise known as surname",
+			"type": "string"
+		},
+		"formattedName": {
+			"description": "Denormalised representation of Given and Family names",
+			"type": "string"
+		},
+		"dateOfBirth": {
+			"description": "The date a person was born",
+			"type": "string",
+			"format": "date"
+		},
+		"placeOfBirth": {
+			"description": "The place where a person was born",
+			"type": "string"
+		},
+		"gender": {
+			"description": "Their current designated gender",
+			"type": "string",
+			"enum": ["Male", "Female", "Unknown"]
+		},
+		"address": {
+			"description": "Address(es) of the Person",
+			"type": "array",
+			"items": {
+				"$ref": "address.json"
+			}
+		},
+		"phone": {
+			"description": "Phone number(s) of Person",
+			"type": "array",
+			"items": {
+				"$ref": "phone.json"
+			}
+		},
+		"email": {
+			"description": "Email address(es) of person",
+			"type": "array",
+			"items": {
+				"$ref": "email.json"
+			}
+		},
+		"web": {
+			"description": "Web address(es) of person",
+			"type": "array",
+			"items": {
+				"$ref": "web.json"
+			}
+		},
+		"emergencyContact": {
+			"description": "Contact person in times of emergencies",
+			"$ref": "person.json"
+		},
+		"disibilityIndicator": {
+			"description": "Does the person have a recognised/registered disability",
+			"type": "boolean"
+		},
+		"certifiedMaritalStatus": {
+			"description": "The current recognised/registered martial status",
+			"type": "string",
+			"enum": ["DomesticPartner", "Divorced", "Married", "Unreported", "Separated", "Unmarried", "Widowed", "LegallySeparated"]
+		},
+		"primaryLanguage": {
+			"description": "Primary Language",
+			"$ref": "languagecode.json"
+		},
+		"citizenCountryCode": {
+			"description": "Identifies the countries that have granted citizenship status to an individual either by birth or by application process. It is a Legal Status.",
+			"type": "array",
+			"items": {
+				"$ref": "countrycode.json"
+			}
+		},
+		"residencyCountryCode": {
+			"description": "Identifies the countries that have issued residency status to an individual",
+			"type": "array",
+			"items": {
+				"$ref": "countrycode.json"
+			}
+		},
+		"nationalityCode": {
+			"description": "A persons informal association with a country through origin, birth or naturalization",
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"userArea": {
+			"description": "The userarea section contains the additional field mapping",
+			"type": "array",
+			"items": {
+				"$ref": "userarea.json"
+			}
+		}
+	},
+	"additionalProperties": false
+}

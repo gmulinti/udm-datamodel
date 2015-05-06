@@ -1,0 +1,133 @@
+{
+  "positionID": [
+    {
+      "id": "23",
+      "scheme": "PostingPositionID"
+    }
+  ],
+  "positionTitle": "Software Developer",
+  "positionURI": "http://crmsystem.com/jobs/lumesse/264",
+  "applyURI": [
+    "http://crmsystem.com/jobs/lumesse/264/apply"
+  ],
+  "applicationMethod": [
+    {
+      "target": "Lumesse Job Portal",
+      "label": "http://lumesse.com/jobs/softwaredeveloper2"
+    }
+  ],
+  "positionOpeningStatusCode": "Active",
+  "positionSupplier": "Company",
+  "positionLocation": [
+    {}
+  ],
+  "organizationName": "Lumesse",
+  "parentOrganizationName": "N/A",
+  "departmentName": "R&D",
+  "positionIndustry": [
+    {
+      "name": "Computer Software",
+      "code": "1234"
+    }
+  ],
+  "jobCategory": [
+    {
+      "name": "Technology",
+      "code": "http://ec.europa.eu/esco/occupation/"
+    }
+  ],
+  "jobGrade": [
+    {
+      "name": "Level",
+      "code": "Manager"
+    }
+  ],
+  "careerLevel": [
+    {
+      "name": "Level",
+      "code": "Senior"
+    }
+  ],
+  "positionSchedule": [
+    {
+      "name": "Standard 9 to 5",
+      "code": "9T5"
+    }
+  ],
+  "positionOfferingType": [
+    {
+      "name": "Full Time",
+      "code": "FT"
+    }
+  ],
+  "qualificationSummary": "BSc",
+  "positionRemuneration": [
+    {
+      "minimumRange": "40000",
+      "maximumRange": "60000",
+      "rateIntervalCode": "Year",
+      "description": "Gross pay"
+    }
+  ],
+  "workingLanguage": [
+    {
+      "name": "English",
+      "code": "ENG"
+    }
+  ],
+  "positionStartDate": "12/01/2015",
+  "positionEndDate": "12/01/2016",
+  "publicationStartDate": "6/1/2015",
+  "applicationCloseDate": "6/2/2015",
+  "positionFormattedDescription": [
+    {
+      "content": "A software developer opportunity in Lumesse's R&D department",
+      "label": "SummaryDescription",
+      "labelDescription": "Title"
+    }
+  ],
+  "postingInstruction": [
+    {
+      "templateID": "Standard layout",
+      "brandingID": "Lumesse logo",
+      "logoURI": "Lumesse 200x100"
+    }
+  ],
+  "specialCommitment": [
+    {
+      "name": "Manage team of existing developers",
+      "code": "MAN"
+    }
+  ],
+  "attachment": [
+    {
+      "embeddedData": "SSB3cml0ZSB0aGlzIGNvdmVyIGxldHRlciBpbiBjb25qdW5jdGlvbiB3aXRoIG15IENWIHRvIGFkZCBmdXJ0aGVyIGRldGFpbHMgYWJvdXQgbXkgY2FyZWVyIHRvIGRhdGUgYW5kIEkgd2h5IEkgdGhpbmsgSSB3b3VsZCBiZSBhIGdvb2QgZml0IGZvciB0aGUgcm9sZSB5b3UgYXJlIGFkdmVydGlzaW5nLiBUaGUgdmFzdCBtYWpvcml0eSBvZiBteSBjYXJlZXIgaGFzIGZvY3VzZWQgb24uLi4=",
+      "embeddedText": "I write this cover letter in conjunction with my CV to add further details about my career to date and I why I think I would be a good fit for the role you are advertising. The vast majority of my career has focused on...",
+      "uri": "http://candidateattachments/repository/candidate3245/CoverLetter.doc",
+      "fileName": "CoverLetter.doc",
+      "description": "Cover letter",
+      "fileType": "Doc",
+      "documentTitle": "Cover letter for software developer role at Lumesse",
+      "accessCredentials": [
+        {
+          "userID": "65372",
+          "typeCode": [
+            {
+              "name": "Username & password",
+              "code": "UAP",
+              "codeURI": "http://isocodes/accesscredtype",
+              "codeType": "http://isocodes/accesscredtype/#code-a1"
+            }
+          ],
+          "value": "username: Username, password: LumessePass1"
+        }
+      ],
+      "userArea": [
+        {
+          "key": "middleName",
+          "value": "bob"
+        }
+      ]
+    }
+  ]
+}

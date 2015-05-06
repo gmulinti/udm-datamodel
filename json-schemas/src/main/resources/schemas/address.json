@@ -1,0 +1,51 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://openplatform.lumesse.com/schemas/address",
+	"title": "address",
+	"description": "Schema defining the physical address of an entity. It is expected that this is referenced by Candidate, Employee and many other entities",
+	"type": "object",
+	"javaType": "com.openplatform.udm.common.Address",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"country": {
+			"description": "The country associated with this address.  NB. This should correlate to the ISO-3611-1 Country Name",
+			"type": "string"
+		},
+		"countryCode": {
+			"description": "The country Code associated with this address.",
+			"$ref": "countrycode.json"
+		},
+		"countrySubDivision": {
+			"description": "Refers region of the Country. NB. This should correlate to the ISO-3611-2 name e.g. Auckland.  In some cases this could overlap a City value",
+			"type": "string"
+		},
+		"countrySubDivisionCode": {
+			"description": "The country Sub division Code associated with this address.",
+			"$ref": "regioncode.json"
+		},
+		"cityName": {
+			"description": "The city in which the entity resides e.g. Auckland",
+			"type": "string"
+		},
+		"postalCode": {
+			"description": "The post code in which the entity resides e.g 1001",
+			"type": "string"
+		},
+		"addressLine": {
+			"description": "Combined address lines e.g. Address1, Address2 - 25 Ambler Ave",
+			"type": "string"
+		},
+		"label": {
+			"description": "used to identify this address - e.g. home address",
+			"type": "string"
+		},
+		"userArea": {
+			"description": "The userarea section contains the additional field mapping",
+			"type": "array",
+			"items": {
+				"$ref": "userarea.json"
+			}
+		}
+	},
+	"additionalProperties": false
+}

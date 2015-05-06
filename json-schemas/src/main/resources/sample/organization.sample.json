@@ -1,0 +1,22 @@
+{
+  "organizationUnit": {
+    "organizationUnitCode": "FZ1101",
+    "organizationUnitName": "Lumesse Open Engineering",
+    "organizationUnitDescription": "Lumesse Openplatform Engineering Department",
+    "parentOrganizationUnit": {
+      "organizationUnitCode": "ER3032",
+      "userArea": [
+        {
+          "key": "organizationUnitOtherName",
+          "value": "Lumesse Engineering Department"
+        }
+      ]
+    },
+    "userArea": [
+      {
+        "key": "organizationUnitOtherName",
+        "value": "Lumesse Openplatform Engineering Department"
+      }
+    ]
+  }
+}

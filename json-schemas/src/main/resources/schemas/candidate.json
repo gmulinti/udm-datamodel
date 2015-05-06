@@ -1,0 +1,379 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://openplatform.lumesse.com/schemas/candidate",
+	"title": "Candidate schema",
+	"description": "Schema defining the candidate object",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"person": {
+			"description": "Dereferences the person schema. All candidates are people and should include the relevant person data",
+			"$ref": "person.json"			
+		},
+		"personCompetency": {
+			"description": "Competencies of candidate",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"competencyID": {
+						"description": "A unique identifier for a competency definition. Could be either an internal or external identifier",
+						"type": "string"
+					},
+					"competencyName": {
+						"description": "The name of the competency e.g. Communication ",
+						"type": "string"
+					},
+					"competencyLevel": {
+						"description": "A measurement of the competency e.g. Good",
+						"type": "string"
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"workEligibility": {
+			"description": "Capture information substantiating a person's eligibility to work within a given jurisdiction. The existence of an entry indicates there is some degree of eligibility",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"countryCode": {
+						"description": "The Country Code",
+						"$ref": "countrycode.json"
+					},
+					"permanent": {
+						"description": "Indicates if the candidate has permanent eligibility or if is transient. ",
+						"type": "boolean"
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"educationOrganizationAttendance": {
+			"description": "Documents a person's attendance at an educational institution.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"school": {
+						"description": "The official name or legal name by which to refer to an organisation. e.g. Auckland University",
+						"type": "string"
+					},
+					"subSchool": {
+						"description": "The name of the department or unit within the school. e.g. Teachers College",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"referenceLocation": {
+						"description": "The location of this school or institute",
+						"$ref": "referencelocation.json"
+					},
+					"educationLevel": {
+						"description": "A description of the level of the education e.g. University, High school",
+						"type": "array",
+						"items": {
+							"$ref": "code.json"
+						}
+					},
+					"attendanceStatusCode": {
+						"description": "Indicates the status of the candidate attending the Education Organisation ",
+						"type": "string",
+						"enum": ["Current", "Prior", "Unknown", "NotSpecified"]
+					},
+					"attendanceStartDate": {
+						"description": "the start date of the attendence e.g. 1974-01-01",
+						"type": "string",
+						"pattern": "^[0-9]{4}(-[0-9]{2}){0,2}$"
+					},
+					"attendanceEndDate": {
+						"description": "the end date of the attendence e.g. 1975-01-01",
+						"type": "string",
+						"pattern": "^[0-9]{4}(-[0-9]{2}){0,2}$"
+					},
+					"educationScore": {
+						"description": "textual representation of a score.  A record of the marks allocated to an individual",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"degreeType": {
+						"description": "The level of the degree, certificate, or award granted for the successful completion of requirements of an academic program",
+						"type": "array",
+						"items": {
+							"$ref": "code.json"
+						}
+					},
+					"degreeDate": {
+						"description": "The date that the degree was awarded e.g 1980-05-01",
+						"type": "string",
+						"pattern": "^[0-9]{4}(-[0-9]{2}){0,2}$"
+					},
+					"majorProgramName": {
+						"description": "The name of the degree - e.g. Arts",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"minorProgramName": {
+						"description": "The name of the degree - e.g. Arts",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"academicHonors": {
+						"description": "Details pertaining to any Honors program",
+						"type": "string"
+					},
+					"comment": {
+						"description": "comment",
+						"type": "string"
+					},
+					"userArea": {
+						"description": "The userarea section contains the additional field mapping",
+						"type": "array",
+						"items": {
+							"$ref": "userarea.json"
+						}
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"positionHistory": {
+			"description": "PositionHistory",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"employer": {
+						"description": "The name of the Employer e.g. Lumesse",
+						"type": "string"
+					},
+					"organizationUnitName": {
+						"description": "The division within the Employer e.g. ServiceDelivery",
+						"type": "string"
+					},
+					"positionTitle": {
+						"description": "The name of the position that is held",
+						"type": "string"
+					},
+					"referenceLocation": {
+						"description": "The location of this position",
+						"$ref": "referencelocation.json"
+					},
+					"startDate": {
+						"description": "The start date of which the candidate was in this position e.g. 1980-02",
+						"type": "string",
+						"pattern": "^[0-9]{4}(-[0-9]{2}){0,2}$"
+					},
+					"endDate": {
+						"description": "The end date of which the candidate was in this position e.g. 1991-09",
+						"type": "string",
+						"pattern": "^[0-9]{4}(-[0-9]{2}){0,2}$"
+					},
+					"currentIndicator": {
+						"description": "Indicates whether this is the current position",
+						"type": "boolean"
+					},
+					"industry": {
+						"description": "The industry name or code that of which the Employer categorised by.",
+						"type": "array",
+						"items": {
+							"$ref": "industrycode.json"
+						}
+					},
+					"jobCategory": {
+						"description": "The category of the job position e.g. developer ",
+						"type": "array",
+						"items": {
+							"$ref": "jobcode.json"
+						}
+					},
+					"jobLevel": {
+						"description": "The level that was obtained in this position",
+						"type": "array",
+						"items": {
+							"$ref": "code.json"
+						}
+					},
+					"description": {
+						"description": "Free text description of the position",
+						"type": "string"
+					},
+					"userArea": {
+						"description": "The userarea section contains the additional field mapping",
+						"type": "array",
+						"items": {
+							"$ref": "userarea.json"
+						}
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"certification": {
+			"description": "Identifies any certification held either formal or informal.  e.g. Oracle JavaCertification",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"certificationTypeCode": {
+						"description": "An internal/external code referencing the certification type",
+						"$ref": "code.json"
+					},
+					"certificationName": {
+						"description": "The name of the certification",
+						"type": "string"
+					},
+					"description": {
+						"description": "Freetext describing the certification",
+						"type": "string"
+					},
+					"issuingAuthorityName": {
+						"description": "The authority which issued the certificate e.g Oracle ",
+						"type": "string"
+					},
+					"firstIssuedDate": {
+						"description": "The date when the certificate was first awarded",
+						"type": "string",
+						"format": "date"
+					},
+					"endDate": {
+						"description": "The date in which the certification expires or lapses.  e.g. Corgi gas registration needs to be renewed annually",
+						"type": "string",
+						"format": "date"
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"license": {
+			"description": "Indicates any right to operate, use, or employ something e.g. drivers license",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"licenseTypeCode": {
+						"description": "An internal/external code referencing the license type",
+						"$ref": "code.json"
+					},
+					"licenseName": {
+						"description": "Text to identify the type of license e.g. Driving License",
+						"type": "string"
+					},
+					"description": {
+						"description": "Free text to further clarify the purpose of the license",
+						"type": "string"
+					},
+					"issuingAuthorityName": {
+						"description": "An agency, bureau, or other organization issuing an associated identifier, license, or certificate; the body or persons exercising power or command. An issuing authority often is a government agency or official authority, but sometimes might be a private organization.",
+						"type": "string"
+					},
+					"firstIssuedDate": {
+						"description": "When the license was first issued by the Authority",
+						"type": "string",
+						"format": "date"
+					},
+					"endDate": {
+						"description": "The date in which the license expires or lapses.",
+						"type": "string",
+						"format": "date"
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"employmentReferences": {
+			"description": "Details of references supplied by the candidate",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"refereeTypeCode": {
+						"description": "A code classifying the type of reference. An HR-XML open list. Enumerated values are: Professional; Personal; and Verification. Additional values are permitted.",
+						"type": "string",
+						"enum": ["Professional", "Personal", "Verification"]
+					},
+					"formattedName": {
+						"description": "This is a formatted presentation of a name (for example, a person name) that might alternatively presented as discretely fielded components or it could otherwise be a name that has alternative formatted representations. The formatCode is an optional attribute available to specify the applicable 'mask' or type of format presentation to which the contents conforms. For example, in the case of the FormattedName of person formatCodes could be items such as: 'Family Name, Given Name' 'Given Name, Middle Initial, Family Name' 'First Initial, Family Name' 'Given Name, Last Initial' 'Nick Name, Family Name'",
+						"type": "string"
+					},
+					"positionTitle": {
+						"description": "A short phrase describing the position as it would be listed on a business card or in a company directory. OED: An appellation attaching to a position in virtue of rank, function or office.",
+						"type": "string"
+					},
+					"organizationName": {
+						"description": "Usually an official or legal name by which to refer to an organization.",
+						"type": "string"
+					},
+					"preferredPhone": {
+						"description": "The candidate's preferred phone number to be contacted with",
+						"type": "string"
+					},
+					"preferredEmail": {
+						"description": "The candidate's preferred email address to be contacted with",
+						"type": "string"
+					},
+					"yearsKnownNumber": {
+						"description": "The number of years the referee has known the candidate",
+						"type": "number"
+					},
+					"relationshipTypeCode": {
+						"description": "A code that defines the relationship between the referee and the candidate",
+						"type": "array",
+						"items": {
+							"$ref": "code.json"
+						}
+					},
+					"comment": {
+						"description": "Any additional comments about the referee or reference",
+						"type": "string"
+					},
+					"userArea": {
+						"description": "The userarea section contains the additional field mapping",
+						"type": "array",
+						"items": {
+							"$ref": "userarea.json"
+						}
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"specialCommitment": {
+			"description": "Additional information on special commitments - name/code",
+			"type": "array",
+			"items": {
+				"$ref": "code.json"
+			}
+		},
+		"attachment": {
+			"description": "Attachment",
+			"type": "array",
+			"items": {
+				"$ref": "attachment.json"
+			}
+		},
+		"userArea": {
+			"description": "The userarea section contains the additional field mapping",
+			"type": "array",
+			"items": {
+				"$ref": "userarea.json"
+			}
+		}
+	},
+	"additionalProperties": false
+}

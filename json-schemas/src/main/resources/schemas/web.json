@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://openplatform.lumesse.com/schemas/web",
+	"title": "web",
+	"description": "Schema defining the web presence of an entity. This component is referenced by many other entities e.g. Candidate",
+	"type": "object",
+	"javaType": "com.openplatform.udm.common.Web",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"address": {
+			"description": "web address - linked in profile, website, blog",
+			"type": "string",
+			"pattern": "^(https?|ftp)://.*$"
+		},
+		"label": {
+			"description": "Label specifying type of this web address",
+			"type": "string",
+			"enum": ["Personal", "Work", "Blog", "Social", "Other"]
+		},
+		"labelDescription": {
+			"description": "Additional description of use",
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}

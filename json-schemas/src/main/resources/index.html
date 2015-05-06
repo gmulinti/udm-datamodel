@@ -1,0 +1,77 @@
+<head>
+            <title>Lumesse Open Unified Data Model</title>
+<style type="text/css" media="screen">
+<!--
+/**
+*
+*/
+body{font:13px/17px Trebuchet MS,Arial;color:#666;background:white }
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+h2{color:#980059;font-size:19.5px;line-height:20px;margin:30px 0 20px 0;}
+h2:first-child{margin-top:0;}
+h3{color:#980059;font-weight:normal;font-size:15px;margin-bottom:15px;}
+.h3box{margin-top:0px;}
+h4{color:#980059;font-size:13px;margin:0 0 5px 0;line-height:2.0em;}
+a{color:#d2195c;}
+
+-->
+</style>
+
+</head>
+<p>
+The Lumesse Open Platform data models ( also referred to as the UDM - Unified Data Model ) are derived from the HR Open Standards formerly known as HR-XML.  HR Open Standards have  a small subset of their XML schemas "transformed" into JSON.  Where the UDM differs from the standard is in the organisation of the elements.  Considerable effort has been made to restructure the JSON into a reusable framework at the same time maintaining as much of the integrity as possible.  
+<p>
+This version of the schema adheres to Draft V4 of the JSON Schema.  In the restructuring, it was decided to not adopt the extension facility (allOf, oneOf etc) as this prevented the use of additionalProperties governing the structure of the JSON documents.  The additionalProperties keyword is used in these JSON schema to ensure that only expected elements are received and misspellings or unknown properties would generate a validation exception.
+<p>
+This also does have a side effect such that where in the real world a candidate may be modelled as being an extension of a person, in JSON we have favour composition over inheritance and such modelled Candidate as having a nested Person object.  This also makes it easier to share the Person attributes when a Candidate "moves" to an Employee.
+<p>
+There may also be subtle differences in the use of arrays to record properties that aren't singular - e.g. IDs.  In the original specification there was a difference between the candidate and employee schemas in dealing with IDs.  In both schemas now we support an array of IDs that each have a scheme associated with the ID.  This allows multiple IDs to be associated with an entity.  e.g PositionOpening may have both an internal and external ID associated with the Job Posting.
+
+
+<p>
+<b>First Class Models</b>
+<ol>
+
+	<li><a href="schemas/employee.json">Employee</a><p>
+	The Employee model represents a person that has a relationship with a company.  It is derived from Person, but adds additional employment related 
+	contexts such as work history, work locations, remuneration and more.   </p>
+	</li>
+	<li><a href="schemas/candidate.json">Candidate</a><p>
+	Candidate represents a Person seeking a Job.  At this stage they haven't applied for a Job ( as they would become an Applicant).  Expect to capture competency, skills etc at the top level, and mandatory general information in the nested Person model.  Expect to use this model in integrations where candidate data is pulled out of an ATS and moved to alternative storage systems. e.g. an ATS - CRM integration.</p>
+	</li>
+	<li><a href="schemas/positionopening.json">PositionOpening</a><p>
+	Position Opening represents a lightweight representation of a Job.  This could also be refered to as a Position, Requisition or Job Advert.  It captures sufficient information to represent the type of Job and its essential data such as industry, skills application process etc.  This data model features between integrations such as the CRM integration with an ATS.</p>
+	</li>
+</ol>
+<hr>
+<b>Supporting Models</b>
+<ol>
+	<li><a href="schemas/person.json">Person</a><p>
+	Person is a reusable model that is referenced by Employee and Candidate.  It captures the general details of the Person including names, address and contact details.  It isn't expected to be used by itself, but rather as part of a composite model.</p>
+	</li>
+	<li><a href="schemas/address.json">Address</a><p>
+	The address model captures a physical location of an entity.  It is designed to be very precise in the location and shouldn't be confused with a ReferenceLocation.  It uses standards such as ISO-3611 for country codes and sub division codes. </p>
+	</li>
+	<li><a href="schemas/referencelocation.json">ReferenceLocation</a><p>
+	The reference location is for the general location of an entity. It may be used to provide a country or city level location of an entity.  If a precise location is required then use Address</p>
+	</li>
+	<li><a href="schemas/phone.json">Phone</a><p>
+	A general structure capable of recording a telephone number and an associate label.  The label identifies the purpose of the number and a preference indicates whether is is a primary contact.  e.g. A home number could be annotated as primary and mobile as secondary and vice versa</p>
+	</li>
+	<li><a href="schemas/email.json">Email</a><p>
+	A general structure capable of recording an email address with an associate label.  The label identifies the purpose of the email and a preference indicates whether is is a primary account.  e.g. A personal email could be annotated as primary and work as secondary and vice versa</p>
+	</li>
+	<li><a href="schemas/web.json">Web</a><p>
+	A general structure capable of recording a web presence such as a facebook profile, linkedin profile etc.  The web presence can be identified as a personal, blog or social profile, along with a description of the use of the profile. </p>
+	</li>
+	<li><a href="schemas/code.json">Code</a><p>
+	The Code model provides a generic capture of a code value and code text.  This can be used where a specific code data type doesn't exist as a standard within the OPEN platform.  The data model allows you to capture the list of available codes that it supports along with a derived text associated with the code.   </p>
+	</li>
+	<li><a href="schemas/jobcode.json">JobCode</a><p>
+	The JobCode is a OPEN standard code that follows the ISCO08 Job Codes.  Details of this standard can be viewed here https://ec.europa.eu/esco/home.  Use this code to identify the classification of the job.  e.g. Naval Officer </p>
+	</li>
+	<li><a href="schemas/industrycode.json">IndustryCode</a><p>
+	The IndustryCode is a OPEN standard code that follows the ISIC V4 Industry Codes.  Details of this standard can be viewed here http://unstats.un.org/unsd/cr/registry/isic-4.asp  Use this code to identify the industry of the job.  e.g. Agriculture, forestry and fishing </p>
+	</li>
+
+</ol>
